@@ -2,7 +2,6 @@ import { observer, useLocalObservable } from "mobx-react-lite";
 import { RouteComponentProps } from "@reach/router";
 import { autorun } from "mobx";
 import { Helmet } from "react-helmet";
-import TestUi from "Page/Landing/TestUi";
 import Navbar from "Page/Landing/Navbar";
 
 interface propType {
@@ -43,13 +42,11 @@ export default observer((props: propType) => {
     <>
       <Helmet>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <title>Honeybear Starter Project!</title>
+        <title>Open Account</title>
       </Helmet>
       <div className="">
         <Navbar />
-        <div className="flex flex-col">
-          <TestUi />
-        </div>
+        <div className="flex flex-col"></div>
       </div>
     </>
   );
