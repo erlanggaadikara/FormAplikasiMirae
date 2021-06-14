@@ -3,6 +3,7 @@ import { RouteComponentProps } from "@reach/router";
 import Form, { Field } from "libs/ui/Form";
 import Button from "libs/ui/Button";
 import Text from "libs/ui/Text";
+import * as Yup from "yup";
 
 interface propType {
   path?: RouteComponentProps;
@@ -13,12 +14,13 @@ export default observer((props: propType) => {
   const values = {
     nama: "" as string,
     email: "" as string,
-    alamat: "" as string,
+    kota: "" as string,
     telepon: "" as string,
   };
 
   const submit = async (values: any) => {
     console.log(values);
+    // return reqForm(values);
   };
 
   return (
@@ -27,6 +29,12 @@ export default observer((props: propType) => {
         className="flex flex-col justify-center items-center"
         initialValues={values}
         onSubmit={submit}
+        validationSchema={{
+          email: Yup.string().email("Invalid email").required("Required"),
+          nama: Yup.string().required("Required"),
+          kota: Yup.string().required("Required"),
+          telepon: Yup.number().required("Required"),
+        }}
       >
         <Field
           className="lg:w-96 border-gray border-2 pl-2"
@@ -43,17 +51,18 @@ export default observer((props: propType) => {
         <Field
           className="lg:w-96 border-gray border-2 pl-2"
           type="text"
-          label="Alamat"
-          name="alamat"
+          label="Kota"
+          name="kota"
         />
         <Field
           className="lg:w-96 border-gray border-2 pl-2"
-          type="text"
-          label="Telepon/No HP"
+          type="number"
+          label="Telepon"
           name="telepon"
+          prefix="+62"
         />
         <Button
-          caption="Lanjut"
+          caption="Selesai"
           type="submit"
           className="w-64 bg-blue-500 text-white"
         />

@@ -13,14 +13,14 @@ export default observer(() => {
       `}
     >
       <div className="p-2 mx-6">
-        <Image src="images/mirae-logo.png" className="lg:w-50 lg:h-16 h-12" />
+        <Image
+          src="images/green-stock.png"
+          className="lg:w-50 lg:h-16 h-12 rounded-full"
+        />
       </div>
       <div className="flex flex-row items-center lg:justify-end md:justify-end w-1/2 h-20 lg:text-base text-sm ">
         <a className="mx-10" href="#">
           About
-        </a>
-        <a className="mx-10" href="#">
-          Contact
         </a>
         <a
           className="rounded-md p-2 mx-4 text-white text-center"

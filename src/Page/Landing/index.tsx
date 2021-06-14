@@ -3,6 +3,7 @@ import { RouteComponentProps } from "@reach/router";
 import { autorun } from "mobx";
 import { Helmet } from "react-helmet";
 import Navbar from "Page/Landing/Navbar";
+import Home from "Page/Landing/Home";
 
 interface propType {
   path?: RouteComponentProps;
@@ -46,7 +47,10 @@ export default observer((props: propType) => {
       </Helmet>
       <div className="">
         <Navbar />
-        <div className="flex flex-col"></div>
+        <div className="flex flex-col">
+          <Home />
+          <div className="bg-gray-500 h-80"></div>
+        </div>
       </div>
     </>
   );
