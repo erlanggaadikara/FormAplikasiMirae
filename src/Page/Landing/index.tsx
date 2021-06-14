@@ -4,6 +4,7 @@ import { autorun } from "mobx";
 import { Helmet } from "react-helmet";
 import Navbar from "Page/Landing/Navbar";
 import Home from "Page/Landing/Home";
+import IgPost from "Page/Landing/IgPost";
 
 interface propType {
   path?: RouteComponentProps;
@@ -43,13 +44,13 @@ export default observer((props: propType) => {
     <>
       <Helmet>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <title>Open Account</title>
+        <title>Green is Fun!</title>
       </Helmet>
       <div className="">
         <Navbar />
         <div className="flex flex-col">
           <Home />
-          <div className="bg-gray-500 h-80"></div>
+          <IgPost />
         </div>
       </div>
     </>

@@ -1,4 +1,5 @@
 import { observer, useLocalObservable } from "mobx-react-lite";
+import { flow } from "mobx";
 import { RouteComponentProps } from "@reach/router";
 import Form, { Field } from "libs/ui/Form";
 import Button from "libs/ui/Button";
@@ -18,10 +19,10 @@ export default observer((props: propType) => {
     telepon: "" as string,
   };
 
-  const submit = async (values: any) => {
+  const submit = flow(function* (values: any) {
     console.log(values);
     // return reqForm(values);
-  };
+  });
 
   return (
     <div className="flex flex-col w-screen h-full justify-center items-center p-7">
